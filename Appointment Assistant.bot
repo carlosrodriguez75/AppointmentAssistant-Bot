@@ -1,0 +1,18 @@
+{
+    "name": "Appointment Assistant",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "f67b50b0-ffcf-11e8-956a-23529c9b4da2",
+            "name": "http://localhost:3978/api/messages"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "overrides": null,
+    "path": "/Users/carlos.rodriguez08/Documents/GitHub/appointmentassistant-bot/Appointment Assistant.bot"
+}

@@ -1,9 +1,17 @@
 var restify = require('restify');
 var builder = require('botbuilder');
 
+var server = restify.createServer(); //Restify server
+server.listen(process.env.port || process.env.PORT || 3978, function () {
+    console.log('%s listening to %s', server.name, server.url);
+})
+
 //BOT Framework connector
 
-var connector = new builder.ConsoleConnector().listen(); //BRAIN of the BOT 
+// var connector = new builder.ConsoleConnector().listen(); //BRAIN of the BOT 
+var connector = new builder.ChatConnector();//Bot Emulator
+server.post('/api/messages', connector.listen()); //Connect the Chat connector and Restify
+
 var bot = new builder.UniversalBot(connector, function (session) {
     session.send("Hey there! I'm a vritual assistant. I can help you book a medical appointment with us. Please provide answers to the following questions.  %s", session.message.text);
     session.beginDialog('setAppointment');
